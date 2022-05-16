@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btnLogin;
+    private Button btnLogin,btnLogin1;
     private EditText edtUsername, edtPassword;
     private Button btnSignIn;
 
@@ -20,9 +20,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnLogin = findViewById(R.id.BtnLogin);
+        btnLogin1 = findViewById(R.id.BtnLogin1);
+
         btnLogin.setOnClickListener(new BtnLoginClickListener());
+        btnLogin1.setOnClickListener(new BtnLogin1ClickListener());
 
     }
+    class BtnLogin1ClickListener implements View.OnClickListener{
+        public void onClick(View v){
+            LoginDialog loginDialog = new LoginDialog(MainActivity.this);
+            loginDialog.show();
+        }
+    }
+
+
     private class BtnLoginClickListener implements View.OnClickListener{
         @Override
         public void onClick(View view) {
